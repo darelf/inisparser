@@ -1,4 +1,5 @@
 var test = require('tape')
+var fs = require('fs')
 var inis = require('./')
 
 test('try some samples', function(t) {
@@ -26,4 +27,11 @@ test('convert some things to utf characters', function(t) {
   title = '2a{sub x}{sub {sub 2}{sub +}{sub 1}} With some other text 4{sub x}'
   shouldbe = '2aₓ{sub ₂₊₁} With some other text 4ₓ'
   t.equal(inis.convertOSTISpecials(title), shouldbe, 'try some fancy OSTI characters with multiple subs')
+})
+test('try a large description', function(t) {
+  t.plan(1)
+  var description = fs.readFileSync('sample.txt').toString()
+  var shouldbe = fs.readFileSync('sample-conv.txt').toString()
+  t.equal(inis.parseOSTItoINIS(description), shouldbe, 'try out the sample file')
+
 })

@@ -10,7 +10,7 @@ Take OSTI notation and convert to INIS.
 The purpose of this package is to convert the OSTI notations for formulas and
 convert it to the INIS notation. There are a couple of other functions that do
 things like reverse that conversion ( poorly, so any help or ideas there are welcome ),
-and one that makes a valiant attempt and picking UTF-8 characters.
+and one that makes a valiant attempt at picking UTF-8 characters.
 
 #### Note
 The UTF-8 character replacement is best effort. Obviously these formulas can get
